@@ -1,6 +1,8 @@
 .App {
-  /* text-align: center; */
+  text-align: center;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -31,6 +33,32 @@ h1 {
   }
 }
 
-.order-item {
-  width: 900px;
+h3 {
+  margin: 50px 0 30px 0;
+}
+.orders {
+  margin: auto;
+}
+
+.export-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  margin: 20px 0;
+}
+
+.export-link:hover {
+  color: white;
+}
+
+.export-btn {
+  margin: 30px 0;
+}
+
+.order-item-column {
+  width: 170px;
+}
+
+.order-item-titles .list-group-item {
+  font-weight: 600;
 }

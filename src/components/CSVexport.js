@@ -1,5 +1,6 @@
 import React from 'react';
 import { CSVLink, CSVDownload } from "react-csv";
+import { Button } from 'react-bootstrap'
 
 function CSVexport(props) {
   const ordersInfo = props.data;
@@ -25,9 +26,11 @@ function CSVexport(props) {
 
   return (
     <div>
-      <CSVLink data={data}>
-        Export order details in CSV
-      </CSVLink>
+      <Button className="export-btn">
+        <CSVLink data={data} className="export-link">
+          Export order details in CSV
+        </CSVLink>
+      </Button>
     </div>
   )
 }
