@@ -3,7 +3,6 @@ import { CSVLink} from "react-csv";
 import { Button } from 'react-bootstrap'
 
 function CSVexport(props) {
-  const ordersInfo = props.data;
   const ordersList = [];
   
   for (let order of props.data) {
@@ -26,7 +25,7 @@ function CSVexport(props) {
 
   return (
     <div>
-      <CSVLink data={data} className="export-link">
+      <CSVLink data={data} className="export-link" filename={orders.csv}>
         <Button className="export-link">
             Export order details in CSV
         </Button>
