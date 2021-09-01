@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
   margin: auto;
 }
 
@@ -14,15 +14,8 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+  text-align: center;
 }
 
 .App-link {
@@ -36,4 +29,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.order-item {
+  width: 900px;
 }
