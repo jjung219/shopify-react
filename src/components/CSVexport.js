@@ -26,11 +26,11 @@ function CSVexport(props) {
 
   return (
     <div>
-      <Button className="export-btn">
-        <CSVLink data={data} className="export-link">
-          Export order details in CSV
-        </CSVLink>
-      </Button>
+      <CSVLink data={data} className="export-link">
+        <Button className="export-link">
+            Export order details in CSV
+        </Button>
+      </CSVLink>
     </div>
   )
 }

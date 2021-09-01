@@ -62,3 +62,9 @@ h3 {
 .order-item-titles .list-group-item {
   font-weight: 600;
 }
+
+.loading {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 400;
+}

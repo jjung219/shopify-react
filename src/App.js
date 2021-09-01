@@ -10,10 +10,9 @@ import './App.css';
 function App() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [fulfilledOrders , setFulfilledOrders] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/orders')
+    axios.get('http://localhost:5000/api/orders')
       .then(res => {
         console.log("response: ", res.data)
         setOrders(res.data.orders)
@@ -21,14 +20,12 @@ function App() {
   }, []);
 
   const onCheck = (e, orderId, locationId) => {
-    console.log(e.target.checked);
-    console.log("order id: ", orderId)
     setLoading(true);
     axios.post('http://localhost:5000/api/fulfillOrder', { orderId, locationId })
       .then(res => {
         console.log(res.data)
-        setOrders(res.data.orders)
-        setLoading(true)
+        setOrders(res.data.orders);
+        setLoading(false);
       })
       .catch(e => console.log(e))
   }
@@ -44,18 +41,12 @@ function App() {
             {order.fulfillment_status ? (
               <span>Already Fulfilled</span>
             ): (
-              <>
-              {loading ? (
-                <span>Loading...</span>
-              ): (
                 <Form.Check 
                   type='checkbox' 
                   id={order.id} 
                   label='Check as fulfilled'
                   onClick={(e) => onCheck(e, order.id, order.location_id)}
                 />
-              )}
-              </>
             )}
           </ListGroup.Item>
         </ListGroup>
@@ -80,6 +71,11 @@ function App() {
         </ListGroup>
         {ordersList}
       </div>
+      {loading && (
+        <div className="loading">
+          Fulfilling order...
+        </div>
+      )}
     </div>
   );
 }
