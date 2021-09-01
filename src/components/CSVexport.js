@@ -25,7 +25,7 @@ function CSVexport(props) {
 
   return (
     <div>
-      <CSVLink data={data} className="export-link" filename={orders.csv}>
+      <CSVLink data={data} className="export-link" filename={"orders.csv"}>
         <Button className="export-link">
             Export order details in CSV
         </Button>
